@@ -24,6 +24,27 @@ const inputGlobalStyles = (theme) => (
       body: {
         backgroundColor: theme.palette.background.default,
         color: theme.palette.text.primary,
+        overflowY: "auto",
+      },
+      "::-webkit-scrollbar": {
+        width: "8px",
+      },
+      "::-webkit-scrollbar-track": {
+        background: alpha(theme.palette.background.default, 0.1),
+        borderRadius: "4px",
+      },
+      "::-webkit-scrollbar-thumb": {
+        background: alpha(
+          theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
+          0.24
+        ),
+        borderRadius: "4px",
+      },
+      "::-webkit-scrollbar-thumb:hover": {
+        background: alpha(
+          theme.palette.mode === "light" ? "#000000" : "#FFFFFF",
+          0.37
+        ),
       },
       "table.simple tbody tr th": {
         borderColor: theme.palette.divider,
@@ -51,20 +72,6 @@ const inputGlobalStyles = (theme) => (
         },
       hr: {
         borderColor: theme.palette.divider,
-      },
-      "::-webkit-scrollbar-thumb": {
-        boxShadow: `inset 0 0 0 20px ${
-          theme.palette.mode === "light"
-            ? "rgba(0, 0, 0, 0.24)"
-            : "rgba(255, 255, 255, 0.24)"
-        }`,
-      },
-      "::-webkit-scrollbar-thumb:active": {
-        boxShadow: `inset 0 0 0 20px ${
-          theme.palette.mode === "light"
-            ? "rgba(0, 0, 0, 0.37)"
-            : "rgba(255, 255, 255, 0.37)"
-        }`,
       },
     }}
   />
